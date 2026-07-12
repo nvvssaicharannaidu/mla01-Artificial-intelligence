@@ -1,0 +1,14 @@
+Algorithm BFS(Graph, Start)
+
+1. Create an empty queue Q.
+2. Mark Start as visited.
+3. Enqueue(Start) into Q.
+
+4. While Q is not empty do
+      a. Dequeue a vertex V from Q.
+      b. Print V.
+      c. For each adjacent vertex U of V
+            If U is not visited then
+                Mark U as visited.
+                Enqueue(U).
+5. Stop.

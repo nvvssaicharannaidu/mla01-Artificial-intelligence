@@ -1,0 +1,23 @@
+Algorithm BFS(G, Start)
+
+1. Create an empty Queue Q.
+2. Mark Start as visited.
+3. Enqueue(Start).
+
+4. While Q is not empty do
+      a. V = Dequeue(Q)
+      b. Print V
+      c. For each adjacent vertex U of V do
+            If U is not visited then
+                Mark U as visited
+                Enqueue(U)
+5. Stop.Algorithm DFS(G, Vertex)
+
+1. Mark Vertex as visited.
+2. Print Vertex.
+
+3. For each adjacent vertex U of Vertex do
+      If U is not visited then
+           DFS(G, U)
+
+4. Stop.

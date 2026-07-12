@@ -1,0 +1,21 @@
+START
+
+Input Graph G and Starting Vertex
+
+BFS:
+1. Create Queue Q.
+2. Mark Start as Visited.
+3. Enqueue(Start).
+4. While Queue is not empty
+      Dequeue a vertex.
+      Print it.
+      Visit all unvisited adjacent vertices.
+      Enqueue them.
+
+DFS:
+1. Mark Start as Visited.
+2. Print Start.
+3. For each unvisited adjacent vertex
+      Call DFS recursively.
+
+STOP

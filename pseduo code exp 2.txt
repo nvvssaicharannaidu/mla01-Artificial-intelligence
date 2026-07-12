@@ -1,0 +1,33 @@
+Algorithm: BFS and DFS
+
+START
+
+1. Create the graph.
+2. Read the starting vertex.
+
+-------------------------
+BFS (Breadth First Search)
+-------------------------
+1. Create an empty queue Q.
+2. Mark the starting vertex as visited.
+3. Enqueue the starting vertex into Q.
+4. While Q is not empty do
+      a. Dequeue a vertex V.
+      b. Print V.
+      c. For each adjacent vertex U of V
+            If U is not visited then
+                Mark U as visited.
+                Enqueue U into Q.
+5. End While.
+
+-------------------------
+DFS (Depth First Search)
+-------------------------
+1. Mark the starting vertex as visited.
+2. Print the vertex.
+3. For each adjacent vertex U
+      If U is not visited then
+            Call DFS(U).
+4. Repeat until all vertices are visited.
+
+STOP
