@@ -1,0 +1,24 @@
+function UniformCostSearch(start, goal):
+    create a priority queue (openSet)
+    add the start node to openSet with priority 0
+    create an empty set (closedSet)
+
+    while openSet is not empty:
+        currentNode = openSet.pop()  // node with the lowest cost
+        if currentNode is goal:
+            return reconstructPath(currentNode)
+
+        add currentNode to closedSet
+
+        for each neighbor in currentNode.neighbors:
+            if neighbor is in closedSet:
+                continue
+
+            newCost = currentNode.cost + cost(currentNode, neighbor)
+            if neighbor not in openSet or newCost < neighbor.cost:
+                neighbor.cost = newCost
+                neighbor.parent = currentNode
+                if neighbor not in openSet:
+                    openSet.add(neighbor, newCost)
+
+    return failure
