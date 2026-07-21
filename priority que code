@@ -1,0 +1,10 @@
+import heapq
+
+pq = []
+
+heapq.heappush(pq, (2, "B"))
+heapq.heappush(pq, (1, "A"))
+heapq.heappush(pq, (3, "C"))
+
+while pq:
+    print(heapq.heappop(pq))
