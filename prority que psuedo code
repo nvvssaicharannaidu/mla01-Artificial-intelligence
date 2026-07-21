@@ -1,0 +1,19 @@
+START
+
+Create an empty Priority Queue PQ
+
+INSERT(element, priority)
+    Add (element, priority) to PQ
+    Arrange PQ based on priority
+END INSERT
+
+DELETE()
+    Remove the element with the highest priority
+    Return the removed element
+END DELETE
+
+WHILE PQ is not empty
+    DELETE()
+END WHILE
+
+STOP
