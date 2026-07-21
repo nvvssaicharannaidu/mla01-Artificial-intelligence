@@ -1,0 +1,40 @@
+START
+
+AlphaBeta(node, depth, alpha, beta, maximizingPlayer)
+
+IF depth = 0 OR node is a terminal node THEN
+    RETURN node value
+END IF
+
+IF maximizingPlayer THEN
+    value = -∞
+
+    FOR each child of node DO
+        value = MAX(value,
+                    AlphaBeta(child, depth-1, alpha, beta, FALSE))
+        alpha = MAX(alpha, value)
+
+        IF alpha >= beta THEN
+            BREAK      // Prune remaining branches
+        END IF
+    END FOR
+
+    RETURN value
+
+ELSE
+    value = +∞
+
+    FOR each child of node DO
+        value = MIN(value,
+                    AlphaBeta(child, depth-1, alpha, beta, TRUE))
+        beta = MIN(beta, value)
+
+        IF beta <= alpha THEN
+            BREAK      // Prune remaining branches
+        END IF
+    END FOR
+
+    RETURN value
+END IF
+
+STOP
