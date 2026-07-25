@@ -1,0 +1,12 @@
+DATABASE person:
+    RECORD ("Alice", Day: 15, Month: May, Year: 1995)
+    RECORD ("Bob", Day: 22, Month: August, Year: 1998)
+    RECORD ("Charlie", Day: 10, Month: January, Year: 2001)
+
+FUNCTION search_by_year(target_year):
+    FOR EACH record IN person:
+        IF record.Year == target_year THEN
+            PRINT record.Name
+        END IF
+    END FOR
+END FUNCTION
