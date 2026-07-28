@@ -1,0 +1,13 @@
+DATABASE diet_rules:
+    Diabetes -> "Low carbohydrate, sugar-free, high fiber diet"
+    Hypertension -> "Low sodium, low fat diet"
+    Anemia -> "Iron-rich diet"
+
+DATABASE patient_diagnoses:
+    John -> Diabetes
+    Mary -> Hypertension
+
+FUNCTION suggest_diet(patient_name):
+    disease = patient_diagnoses[patient_name]
+    RETURN diet_rules[disease]
+END FUNCTION
