@@ -1,0 +1,18 @@
+STATE = (MonkeyPos, BoxPos, MonkeyOnBox, HasBanana)
+
+FUNCTION can_get_banana(State):
+    IF State.HasBanana == TRUE THEN
+        RETURN True
+    END IF
+
+    FOR EACH valid_action IN [walk, push, climb, grasp]:
+        IF valid_action IS POSSIBLE in State THEN
+            NextState = APPLY(valid_action, State)
+            IF can_get_banana(NextState) THEN
+                RETURN True
+            END IF
+        END IF
+    END FOR
+
+    RETURN False
+END FUNCTION
