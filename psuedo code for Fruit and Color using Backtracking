@@ -1,0 +1,10 @@
+DATABASE fruit_colors: [(Apple, Red), (Apple, Green), (Banana, Yellow), (Grape, Green)]
+
+PROCEDURE print_fruits_by_color(target_color):
+    FOR EACH (fruit, color) IN fruit_colors:
+        IF color == target_color THEN
+            PRINT fruit + " is " + color
+            % Forces search to backtrack/continue to the next matching item
+        END IF
+    END FOR
+END PROCEDURE
