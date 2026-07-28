@@ -1,0 +1,22 @@
+FUNCTION best_first_search(start_node, goal_node):
+    OPEN_LIST = PriorityQueue sorted by heuristic h(node)
+    PUSH start_node TO OPEN_LIST
+    VISITED = empty set
+
+    WHILE OPEN_LIST is not empty:
+        current = POP lowest heuristic node from OPEN_LIST
+        IF current == goal_node THEN
+            RETURN path to current
+        END IF
+
+        ADD current TO VISITED
+        FOR EACH neighbor OF current:
+            IF neighbor NOT IN VISITED THEN
+                PUSH neighbor TO OPEN_LIST
+            END IF
+        END FOR
+    END WHILE
+
+    RETURN Failure
+END FUNCTION
+12. Medical Diagnosis System
