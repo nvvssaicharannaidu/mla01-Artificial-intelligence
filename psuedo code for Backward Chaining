@@ -1,0 +1,23 @@
+DATABASE facts = [croaks(fritz), eats_flies(fritz)]
+
+FUNCTION prove_goal(Goal):
+    IF Goal IS IN facts THEN
+        RETURN True
+    END IF
+
+    FOR EACH rule WHERE rule.conclusion == Goal:
+        all_subgoals_proven = True
+        FOR EACH subgoal IN rule.conditions:
+            IF prove_goal(subgoal) == False THEN
+                all_subgoals_proven = False
+                BREAK
+            END IF
+        END FOR
+
+        IF all_subgoals_proven == True THEN
+            RETURN True
+        END IF
+    END FOR
+
+    RETURN False
+END FUNCTION
