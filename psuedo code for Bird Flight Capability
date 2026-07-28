@@ -1,0 +1,10 @@
+DATABASE birds: [Eagle, Sparrow, Penguin, Ostrich]
+DATABASE cannot_fly_list: [Penguin, Ostrich]
+
+FUNCTION can_fly(animal):
+    IF animal IS IN birds AND animal IS NOT IN cannot_fly_list THEN
+        RETURN True
+    ELSE
+        RETURN False
+    END IF
+END FUNCTION
