@@ -1,0 +1,21 @@
+DATABASE females: [Pam, Liz, Ann, Pat]
+DATABASE males: [Tom, Bob, Jim]
+DATABASE parent_relations: [(Pam, Bob), (Tom, Bob), (Tom, Liz), (Bob, Ann), (Bob, Pat), (Pat, Jim)]
+
+FUNCTION mother(X, Y):
+    RETURN (X IS IN females) AND ((X, Y) IS IN parent_relations)
+
+FUNCTION father(X, Y):
+    RETURN (X IS IN males) AND ((X, Y) IS IN parent_relations)
+
+FUNCTION grandfather(X, Y):
+    RETURN EXISTS Z WHERE (X IS IN males) AND ((X, Z) IS IN parent_relations) AND ((Z, Y) IS IN parent_relations)
+
+FUNCTION grandmother(X, Y):
+    RETURN EXISTS Z WHERE (X IS IN females) AND ((X, Z) IS IN parent_relations) AND ((Z, Y) IS IN parent_relations)
+
+FUNCTION sister(X, Y):
+    RETURN EXISTS Z WHERE (X IS IN females) AND ((Z, X) IS IN parent_relations) AND ((Z, Y) IS IN parent_relations) AND (X != Y)
+
+FUNCTION brother(X, Y):
+    RETURN EXISTS Z WHERE (X IS IN males) AND ((Z, X) IS IN parent_relations) AND ((Z, Y) IS IN parent_relations) AND (X != Y)
