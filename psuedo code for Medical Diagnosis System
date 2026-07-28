@@ -1,0 +1,16 @@
+DATABASE patient_symptoms:
+    John -> [fever, cough, rash]
+
+FUNCTION diagnose(patient):
+    symptoms = patient_symptoms[patient]
+
+    IF [fever, cough, loss_of_taste] SUBSET OF symptoms THEN
+        RETURN "COVID-19"
+    ELSE IF [fever, body_ache] SUBSET OF symptoms THEN
+        RETURN "Flu"
+    ELSE IF [fever, cough, rash] SUBSET OF symptoms THEN
+        RETURN "Measles"
+    ELSE
+        RETURN "Unknown Condition"
+    END IF
+END FUNCTION  
