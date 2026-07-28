@@ -1,0 +1,9 @@
+PROCEDURE hanoi(N, Source, Target, Auxiliary):
+    IF N == 1 THEN
+        PRINT "Move disk 1 from " + Source + " to " + Target
+    ELSE
+        hanoi(N - 1, Source, Auxiliary, Target)
+        PRINT "Move disk " + N + " from " + Source + " to " + Target
+        hanoi(N - 1, Auxiliary, Target, Source)
+    END IF
+END PROCEDURE
